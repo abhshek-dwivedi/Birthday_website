@@ -1,0 +1,856 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Abhishek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    :root{
+      --bg1:#0f0c29;
+      --bg2:#302b63;
+      --bg3:#24243e;
+      --pink:#ff4d9d;
+      --cyan:#7cf3ff;
+      --gold:#ffd166;
+      --orange:#ff7b54;
+      --violet:#9b5cff;
+      --white08:rgba(255,255,255,0.08);
+      --white12:rgba(255,255,255,0.12);
+      --white15:rgba(255,255,255,0.15);
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
+      overflow-x:hidden;
+      color:#fff;
+      background:
+        radial-gradient(circle at top left, rgba(255, 0, 128, 0.28), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(0, 183, 255, 0.20), transparent 25%),
+        linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size:400% 400%;
+      animation:bgMove 14s ease infinite;
+      position:relative;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 10%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05), transparent 12%),
+        radial-gradient(circle at 60% 75%, rgba(255,255,255,0.04), transparent 10%);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    @keyframes bgMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    .container{
+      width:min(1180px, 92%);
+      margin:auto;
+      padding:30px 0 60px;
+      position:relative;
+      z-index:2;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:10px 0 20px;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:1px;
+      background:linear-gradient(90deg,var(--pink),var(--cyan));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .top-right{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .badge,.clock-box{
+      padding:10px 18px;
+      border:1px solid var(--white15);
+      border-radius:999px;
+      background:var(--white08);
+      backdrop-filter:blur(12px);
+      font-size:14px;
+      font-weight:600;
+      box-shadow:0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    .clock-box{
+      min-width:120px;
+      text-align:center;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:32px;
+      align-items:center;
+      min-height:85vh;
+    }
+
+    .left{
+      animation:fadeUp 1.2s ease;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:var(--white08);
+      border:1px solid rgba(255,255,255,0.18);
+      backdrop-filter:blur(12px);
+      font-size:14px;
+      margin-bottom:18px;
+      color:#f4f4f4;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      font-size:clamp(42px,7vw,82px);
+      line-height:1.02;
+      font-weight:800;
+      letter-spacing:-1.5px;
+      margin-bottom:18px;
+      text-shadow:0 8px 30px rgba(0,0,0,0.35);
+    }
+
+    h1 span{
+      background:linear-gradient(90deg,#ff66b3,#ffd166,#7cf3ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .typing-wrap{
+      min-height:38px;
+      margin-bottom:12px;
+    }
+
+    .typing-text{
+      font-size:22px;
+      font-weight:700;
+      color:#fff;
+      letter-spacing:.4px;
+    }
+
+    .cursor{
+      display:inline-block;
+      color:var(--gold);
+      animation:blink .8s infinite;
+      margin-left:4px;
+    }
+
+    @keyframes blink{
+      0%,50%{opacity:1}
+      51%,100%{opacity:0}
+    }
+
+    .subtitle{
+      font-size:18px;
+      line-height:1.8;
+      color:rgba(255,255,255,0.85);
+      max-width:680px;
+      margin-bottom:28px;
+    }
+
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-bottom:26px;
+      max-width:560px;
+    }
+
+    .count-box{
+      background:rgba(255,255,255,0.09);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:20px;
+      padding:16px 10px;
+      text-align:center;
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    .count-box h3{
+      font-size:28px;
+      line-height:1;
+      margin-bottom:8px;
+      color:#fff;
+    }
+
+    .count-box p{
+      font-size:13px;
+      color:rgba(255,255,255,0.75);
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .btn-group{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .btn{
+      border:none;
+      outline:none;
+      cursor:pointer;
+      padding:15px 28px;
+      border-radius:16px;
+      font-size:16px;
+      font-weight:700;
+      transition:0.35s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:180px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,0.22), transparent);
+      transform:translateX(-120%);
+      transition:.7s;
+    }
+
+    .btn:hover::before{
+      transform:translateX(120%);
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#ff2d75,#ff7b54);
+      color:#fff;
+      box-shadow:0 14px 35px rgba(255,80,120,0.35);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-4px) scale(1.02);
+      box-shadow:0 20px 45px rgba(255,80,120,0.45);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.14);
+      backdrop-filter:blur(12px);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-4px);
+      background:rgba(255,255,255,0.13);
+    }
+
+    .btn-music{
+      background:linear-gradient(90deg,#7c4dff,#00c2ff);
+      color:#fff;
+      box-shadow:0 14px 35px rgba(80,120,255,0.28);
+    }
+
+    .btn-music:hover{
+      transform:translateY(-4px) scale(1.02);
+    }
+
+    .info-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:10px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(16px);
+      box-shadow:0 12px 40px rgba(0,0,0,0.25);
+      transition:0.35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 45px rgba(0,0,0,0.32);
+    }
+
+    .card h3{
+      font-size:18px;
+      margin-bottom:8px;
+      font-weight:700;
+    }
+
+    .card p{
+      color:rgba(255,255,255,0.78);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .right{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      animation:zoomIn 1.2s ease;
+    }
+
+    .main-box{
+      width:100%;
+      max-width:430px;
+      padding:28px;
+      border-radius:32px;
+      background:rgba(255,255,255,0.09);
+      border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(18px);
+      box-shadow:0 20px 60px rgba(0,0,0,0.35);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .main-box::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(255,255,255,0.12);
+      border-radius:50%;
+      top:-60px;
+      right:-50px;
+      filter:blur(10px);
+    }
+
+    .photo{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      margin:10px auto 18px;
+      padding:6px;
+      background:linear-gradient(135deg,#ff4d9d,#7cf3ff,#ffd166);
+      box-shadow:0 15px 40px rgba(0,0,0,0.3);
+      animation:floatPhoto 3s ease-in-out infinite;
+    }
+
+    @keyframes floatPhoto{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:50%;
+      display:block;
+      background:#111;
+    }
+
+    .main-box h2{
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .main-box .line{
+      font-size:15px;
+      color:rgba(255,255,255,0.78);
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .wish-box{
+      margin-top:18px;
+      padding:18px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.1);
+      font-size:15px;
+      color:#fff;
+      line-height:1.8;
+    }
+
+    .surprise-message{
+      margin-top:18px;
+      padding:16px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(255,77,157,0.18), rgba(124,243,255,0.18));
+      border:1px solid rgba(255,255,255,0.12);
+      display:none;
+      animation:fadeUp 0.6s ease;
+      font-weight:600;
+      line-height:1.8;
+    }
+
+    .gift-box{
+      margin-top:18px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:22px;
+      padding:18px;
+    }
+
+    .gift-btn{
+      width:100%;
+      padding:14px 18px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(90deg,#ff4d9d,#9b5cff);
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s ease;
+    }
+
+    .gift-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 32px rgba(155,92,255,0.34);
+    }
+
+    .gift-message{
+      display:none;
+      margin-top:14px;
+      padding:14px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.07);
+      line-height:1.8;
+      color:#fff;
+      animation:fadeUp .5s ease;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:50px;
+      color:rgba(255,255,255,0.7);
+      font-size:14px;
+      padding-bottom:15px;
+    }
+
+    .balloon{
+      position:fixed;
+      bottom:-150px;
+      width:70px;
+      height:90px;
+      border-radius:50%;
+      opacity:0.65;
+      z-index:1;
+      animation:floatUp linear infinite;
+    }
+
+    .balloon::after{
+      content:"";
+      position:absolute;
+      width:2px;
+      height:80px;
+      background:rgba(255,255,255,0.4);
+      left:50%;
+      top:90px;
+      transform:translateX(-50%);
+    }
+
+    .b1{left:8%; background:#ff4d9d; animation-duration:13s;}
+    .b2{left:22%; background:#ffd166; animation-duration:16s; width:60px; height:80px;}
+    .b3{left:42%; background:#7cf3ff; animation-duration:12s;}
+    .b4{left:64%; background:#9b5cff; animation-duration:18s; width:65px; height:85px;}
+    .b5{left:84%; background:#ff7b54; animation-duration:14s;}
+
+    @keyframes floatUp{
+      0%{
+        transform:translateY(0) translateX(0) rotate(0deg);
+        opacity:0;
+      }
+      10%{opacity:0.8;}
+      50%{
+        transform:translateY(-55vh) translateX(20px) rotate(6deg);
+      }
+      100%{
+        transform:translateY(-120vh) translateX(-20px) rotate(-6deg);
+        opacity:0;
+      }
+    }
+
+    .confetti{
+      position:fixed;
+      width:10px;
+      height:18px;
+      top:-20px;
+      opacity:0.9;
+      z-index:9999;
+      animation:fall linear forwards;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+      }
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(35px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes zoomIn{
+      from{
+        opacity:0;
+        transform:scale(0.9);
+      }
+      to{
+        opacity:1;
+        transform:scale(1);
+      }
+    }
+
+    @media (max-width:960px){
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .subtitle{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .btn-group{
+        justify-content:center;
+      }
+
+      .info-cards{
+        grid-template-columns:1fr;
+      }
+
+      .countdown{
+        margin-left:auto;
+        margin-right:auto;
+      }
+    }
+
+    @media (max-width:600px){
+      .navbar{
+        flex-direction:column;
+        gap:14px;
+      }
+
+      .main-box{
+        padding:22px 16px;
+      }
+
+      .photo{
+        width:150px;
+        height:150px;
+      }
+
+      .main-box h2{
+        font-size:28px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .countdown{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .typing-text{
+        font-size:18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balloon b1"></div>
+  <div class="balloon b2"></div>
+  <div class="balloon b3"></div>
+  <div class="balloon b4"></div>
+  <div class="balloon b5"></div>
+
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">ABHISHEK BIRTHDAY</div>
+      <div class="top-right">
+        <div class="badge">🎉 28 August 2005</div>
+        <div class="clock-box" id="clock">00:00:00</div>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="left">
+
+        <div class="typing-wrap">
+          <span class="typing-text" id="typingText"></span><span class="cursor">|</span>
+        </div>
+
+        <h1>Happy Birthday <br><span>Abhishek</span> 🎂</h1>
+
+        <p class="subtitle">
+          Wishing you a life full of success, happiness, peace, fitness, money, and beautiful memories.
+          May every year make you stronger, smarter, and closer to your dream life.
+        </p>
+
+        <div class="countdown">
+          <div class="count-box">
+            <h3 id="days">00</h3>
+            <p>Days</p>
+          </div>
+          <div class="count-box">
+            <h3 id="hours">00</h3>
+            <p>Hours</p>
+          </div>
+          <div class="count-box">
+            <h3 id="minutes">00</h3>
+            <p>Minutes</p>
+          </div>
+          <div class="count-box">
+            <h3 id="seconds">00</h3>
+            <p>Seconds</p>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="showSurprise()">Open Surprise</button>
+          <button class="btn btn-secondary" onclick="launchConfetti()">Celebrate Now</button>
+          <button class="btn btn-music" onclick="toggleMusic()" id="musicBtn">Play Music</button>
+        </div>
+
+        <div class="info-cards">
+          <div class="card">
+            <h3>🔥 Dream Big</h3>
+            <p>May this year bring you closer to your goals, your success, and the life you truly deserve.</p>
+          </div>
+          <div class="card">
+            <h3>💪 Stay Strong</h3>
+            <p>Keep building yourself mentally, physically, and financially. Your best version is coming.</p>
+          </div>
+          <div class="card">
+            <h3>👑 Keep Shining</h3>
+            <p>You are meant for big things. Keep smiling, keep grinding, and keep winning in life.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="main-box">
+          <div class="photo">
+            <img src="abhishek.jpeg" alt="Abhishek Photo">
+          </div>
+
+          <h2>Happy Birthday Abhishek</h2>
+          <p class="line">
+            28 August 2005 <br>
+            A star was born on this day.
+          </p>
+
+          <div class="wish-box">
+            “May your journey be filled with confidence, success, peace, and unforgettable moments.
+            Keep becoming the man you dream to be.”
+          </div>
+
+          <div class="surprise-message" id="surpriseMessage">
+            🎊 Surprise! 🎊 <br><br>
+            Abhishek, you are powerful, special, and made for greatness.  
+            This birthday is not just a celebration of your age, but a celebration of your future. 💫
+          </div>
+
+          <div class="gift-box">
+            <button class="gift-btn" onclick="openGift()">🎁 Open Gift Box</button>
+            <div class="gift-message" id="giftMessage">
+              Wishing you unlimited happiness, solid health, strong mindset, real success, and a beautiful life ahead. ❤️✨
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Made with ❤️ for Abhishek
+    </div>
+  </div>
+
+  <audio id="birthdayMusic" loop>
+    <source src="birthday-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showSurprise(){
+      const msg = document.getElementById("surpriseMessage");
+      msg.style.display = "block";
+      launchConfetti();
+    }
+
+    function openGift(){
+      const gift = document.getElementById("giftMessage");
+      gift.style.display = "block";
+      launchConfetti();
+    }
+
+    function launchConfetti(){
+      for(let i = 0; i < 80; i++){
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        confetti.style.background = getRandomColor();
+        confetti.style.transform = `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 4500);
+      }
+    }
+
+    function getRandomColor(){
+      const colors = ["#ff4d9d","#ffd166","#7cf3ff","#9b5cff","#ff7b54","#ffffff"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    const music = document.getElementById("birthdayMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    function toggleMusic(){
+      if(music.paused){
+        music.play();
+        musicBtn.innerText = "Pause Music";
+      }else{
+        music.pause();
+        musicBtn.innerText = "Play Music";
+      }
+    }
+
+    function updateClock(){
+      const now = new Date();
+      let h = String(now.getHours()).padStart(2,'0');
+      let m = String(now.getMinutes()).padStart(2,'0');
+      let s = String(now.getSeconds()).padStart(2,'0');
+      document.getElementById("clock").innerText = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock,1000);
+    updateClock();
+
+    function getNextBirthday(){
+      const now = new Date();
+      let year = now.getFullYear();
+      let nextBirthday = new Date(year, 7, 28, 0, 0, 0); // August = 7
+
+      if(now > nextBirthday){
+        nextBirthday = new Date(year + 1, 7, 28, 0, 0, 0);
+      }
+      return nextBirthday.getTime();
+    }
+
+    function updateCountdown(){
+      const targetDate = getNextBirthday();
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if(diff <= 0){
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").innerText = String(days).padStart(2,'0');
+      document.getElementById("hours").innerText = String(hours).padStart(2,'0');
+      document.getElementById("minutes").innerText = String(minutes).padStart(2,'0');
+      document.getElementById("seconds").innerText = String(seconds).padStart(2,'0');
+    }
+    setInterval(updateCountdown,1000);
+    updateCountdown();
+
+    const typingLines = [
+      "Celebrate the Abhishek's special day 🎉",
+      "28 August 2005 — a legend was born 👑",
+      "Aesthetic birthday vibes for Abhishek ✨"
+    ];
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    const typingText = document.getElementById("typingText");
+
+    function typeEffect(){
+      const currentLine = typingLines[lineIndex];
+
+      if(!deleting){
+        typingText.textContent = currentLine.substring(0, charIndex + 1);
+        charIndex++;
+
+        if(charIndex === currentLine.length){
+          deleting = true;
+          setTimeout(typeEffect, 1200);
+          return;
+        }
+      }else{
+        typingText.textContent = currentLine.substring(0, charIndex - 1);
+        charIndex--;
+
+        if(charIndex === 0){
+          deleting = false;
+          lineIndex = (lineIndex + 1) % typingLines.length;
+        }
+      }
+
+      setTimeout(typeEffect, deleting ? 45 : 80);
+    }
+    typeEffect();
+  </script>
+</body>
+</html>
